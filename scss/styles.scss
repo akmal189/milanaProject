@@ -18,7 +18,7 @@ html body {
     padding: 0;
     margin: 0;
     line-height: normal;
-    font-family: var(--font-family);
+    font-family: var(--font5);
 
     * {
         box-sizing: border-box;
@@ -56,6 +56,11 @@ video {
 
 .overflow_hidden {
     overflow: hidden !important;
+}
+
+.site-wrapper {
+    display: flex;
+    flex-direction: column;
 }
 
 .swiper-pagination {
@@ -98,14 +103,25 @@ video {
         display: flex;
         flex-direction: column;
         align-items: center;
+
+        @media all and (max-width: 1260px) {
+            flex-direction: row;
+            align-items: flex-start;
+            justify-content: space-between;
+            padding: 15px 0;
+        }
     }
 
     &__langs {
         position: absolute;
-        top: 0;
+        top: 34px;
         right: -68px;
         display: flex;
         gap: 20px;
+
+        @media all and (max-width: 1260px) {
+            position: static;
+        }
 
         &-item {
 
@@ -143,6 +159,10 @@ video {
     &__menu {
         margin-top: 42px;
 
+        @media all and (max-width: 1260px) {
+            display: none;
+        }
+
         ul {
             list-style-type: none;
             display: flex;
@@ -179,13 +199,15 @@ video {
     &__burger-btn {
         display: none;
         font-size: 0;
+        min-width: 88px;
+        text-align: right;
 
         @media all and (max-width: 1260px) {
             display: block;
         }
 
         a {
-            display: block;
+            display: inline-block;
         }
 
         svg {
@@ -529,9 +551,9 @@ video {
 
         &-inner {
             width: 100%;
-            max-width: 1390px;
+            max-width: 1430px;
             margin: 0 auto;
-            padding: 18px 0;
+            padding: 18px 20px;
         }
 
         &-title {
