@@ -11,18 +11,7 @@ document.addEventListener('DOMContentLoaded', () => {
         infinite: false // бесконечный скролл
     })
 
-    // запуск анимации скролла
-    function raf(time) {
-        lenis.raf(time);
-        requestAnimationFrame(raf);
-    }
-
-    requestAnimationFrame(raf);
-
-    requestAnimationFrame(() => {
-        let height = document.body.scrollHeight;
-        document.body.style.height = height + 'px';
-    });
+    
 
     const headerLogo = document.querySelector('.site-header__logo');
 
@@ -250,4 +239,17 @@ document.addEventListener('DOMContentLoaded', () => {
 
     pricesSlider();
     window.addEventListener('resize', pricesSlider);
+
+    // запуск анимации скролла
+    function raf(time) {
+        lenis.raf(time);
+        requestAnimationFrame(raf);
+    }
+
+    requestAnimationFrame(raf);
+
+    requestAnimationFrame(() => {
+        let height = document.body.scrollHeight;
+        document.body.style.height = height + 'px';
+    });
 })
