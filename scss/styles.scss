@@ -68,11 +68,6 @@ video {
     overflow: hidden !important;
 }
 
-.site-wrapper {
-    display: flex;
-    flex-direction: column;
-}
-
 .swiper-pagination {
     display: flex;
     flex-wrap: wrap;
@@ -102,7 +97,14 @@ video {
 }
 
 .site-wrapper {
-    background: url('../img/kletka_bg.png') top left repeat var(--accent-color) fixed;
+    display: flex;
+    flex-direction: column;
+    background: var(--accent-color) fixed;
+    background-image: 
+    linear-gradient(rgba(#fff, .2) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(#fff, .2) 1px, transparent 1px);
+    
+    background-size: 1cm 1cm;
     @media all and (max-width: 1260px) {
         background-attachment: scroll;
     }
@@ -780,7 +782,12 @@ video {
 }
 
 .site-footer {
-    background: url('../img/kletka_bg.png') top left repeat #2e0916 fixed;
+    background: #2e0916 fixed;
+    background-image: 
+    linear-gradient(rgba(#fff, .2) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(#fff, .2) 1px, transparent 1px);
+    background-size: 1cm 1cm;
+    
     @media all and (max-width: 1260px) {
         background-attachment: scroll;
     }
