@@ -92,7 +92,7 @@ document.addEventListener('DOMContentLoaded', () => {
     const items = document.querySelectorAll('.site-header__menu li, .hero-section__tags-item, .projects-block__item, .prices-block__item, .block-title, .faq-block__item, section');
 
     const groups = new Map();
-	
+
 	items.forEach((item) => {
 	    const parent = item.parentElement;
 	    if (!groups.has(parent)) {
@@ -100,9 +100,9 @@ document.addEventListener('DOMContentLoaded', () => {
 	    }
 	    groups.get(parent).push(item);
 	});
-	
+
 	const isMobile = window.innerWidth <= 768;
-	
+
 	groups.forEach((groupItems) => {
 	    groupItems.forEach((item, index) => {
 	        gsap.fromTo(item,
@@ -114,11 +114,13 @@ document.addEventListener('DOMContentLoaded', () => {
 	                opacity: 1,
 	                y: 0,
 	                scrollTrigger: {
-	                    trigger: item.parentElement,
-	                    start: isMobile ? "top 110%" : "top 95%",
+	                    trigger: groupItems[0],
+	                    start: isMobile ? "top 95%" : "top 90%",
+	                    toggleActions: "play none none none"
 	                },
-	                duration: 1,
-	                delay: index * 0.20
+	                duration: 0.8,
+	                delay: index * 0.15,
+	                ease: "power2.out"
 	            }
 	        );
 	    });

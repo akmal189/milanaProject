@@ -7,6 +7,7 @@
     --font10: "Jost", sans-serif;
     --accent-color: #5C1A32;
     --primary-color: #fcefda;
+    --primary-color_20: rgba(252,239,218, .2);
     --font4: "Inter", sans-serif;
 }
 
@@ -661,8 +662,8 @@ video {
     }
 
     &__item {
-        border-top: 1px solid var(--primary-color);
-        border-bottom: 1px solid var(--primary-color);
+        border-top: 1px solid var(--primary-color_20);
+        border-bottom: 1px solid var(--primary-color_20);
 
         &-inner {
             width: 100%;
