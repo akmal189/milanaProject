@@ -186,4 +186,19 @@ document.addEventListener('DOMContentLoaded', () => {
             item.querySelectorAll('.price-item').forEach((el) => el.style.color = textColor);
         })
     }
+
+    function appendTags() {
+        const tagsBlock = document.querySelector('.hero-section__tags');
+
+        if(tagsBlock) {
+            if(IsMobile && window.innerWidth <= 980) {
+                document.querySelector('.hero-section').append(tagsBlock);
+            } else {
+                document.querySelector('.hero-section__right').append(tagsBlock);
+            }
+        }
+    }
+    appendTags();
+
+    window.addEventListener('resize', appendTags);
 })

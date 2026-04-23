@@ -222,6 +222,12 @@ video {
 .hero-section {
     margin-top: 56px;
     margin-bottom: 77px;
+
+    @media all and (max-width: 980px) {
+        margin-bottom: 40px;
+        margin-top: 23px;
+    }
+
     &__inner {
         display: flex;
         align-items: flex-start;
@@ -231,7 +237,7 @@ video {
 
         @media all and (max-width: 980px) {
             flex-direction: column;
-            padding: 15px 21px;
+            padding: 15px 21px 25px;
         }
     }
 
@@ -243,11 +249,6 @@ video {
             width: 100%;
             margin: 0 0 30px;
         }
-    }
-
-    &__image {
-        position: relative;
-        padding-top: 112%;
 
         &:before {
             content: '';
@@ -261,7 +262,17 @@ video {
             font-size: 0;
             line-height: normal;
             background: url('../img/clip.svg') 50% no-repeat;
+
+            @media all and (max-width: 980px) {
+                top: -58px;
+                left: -55px;
+            }
         }
+    }
+
+    &__image {
+        position: relative;
+        padding-top: 112%;
         
         img {
             border-radius: 20px 0 0 20px;
@@ -349,6 +360,12 @@ video {
         gap: 19px 24px;
         margin-top: 60px;
 
+        @media all and (max-width: 550px) {
+            flex-direction: column;
+            align-items: center;
+            gap: 24px;
+        }
+
         &-item {
             border-radius: 6px;
             padding: 6px 15px;
@@ -360,6 +377,13 @@ video {
             text-align: center;
             color: var(--primary-color);
             line-height: 1;
+
+            @media all and (max-width: 550px) {
+                min-width: 272px;
+                text-align: center;
+                padding-left: 15px !important;
+                padding-right: 15px !important;
+            }
 
             &:nth-child(2) {
                 padding-left: 35px;
@@ -382,17 +406,28 @@ video {
 }
 
 .projects-block {
-    margin-top: 65px;
-    margin-bottom: 65px;
+    margin: 65px 0;
 
+    @media all and (max-width: 980px) {
+        margin: 50px 0;
+    }
     &__inner {
         padding: 44px 0 28px;
+
+        @media all and (max-width: 980px) {
+            padding: 0;
+        }
     }
 
     &__list {
         display: grid;
         grid-template-columns: repeat(2, minmax(0, 1fr));
         gap: 21px 27px;
+
+        @media all and (max-width: 768px) {
+            grid-template-columns: 1fr;
+            gap: 27px;
+        }
     }
 
     &__item {
