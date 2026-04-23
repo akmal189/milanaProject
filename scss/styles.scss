@@ -33,6 +33,10 @@ video {
 
 .block-padding {
     padding: 0 20px;
+
+    @media all and (max-width: 980px) {
+        padding: 0 16px;
+    }
 }
 
 .block-width {
@@ -52,6 +56,11 @@ video {
     text-align: center;
     font-weight: bold;
     margin-bottom: 35px;
+    
+    @media all and (max-width: 980px) {
+        font-size: 24px;
+        margin-bottom: 20px;
+    }
 }
 
 .overflow_hidden {
@@ -68,21 +77,21 @@ video {
     flex-wrap: wrap;
     align-items: center;
     justify-content: center;
-    gap: 4.5px;
+    gap: 6px;
     position: static;
     width: 100%;
 
     .swiper-pagination-bullet {
-        width: 10px;
-        height: 10px;
+        width: 14px;
+        height: 14px;
         border-radius: 100%;
-        background: #D9D9D9;
+        background: rgba(#D9D9D9, .6);
         opacity: 1;
         transition: all 0.3s ease;
 
         &-active,
         &:hover {
-            background: #546B88;
+            background: var(--primary-color);
         }
     }
 }
@@ -431,6 +440,15 @@ video {
     }
 
     &__item {
+
+        &:nth-child(3), &:nth-child(4) {
+
+            .projects-block__item-image img {
+                @media all and (max-width: 980px) {
+                    object-position: top left;
+                }
+            }
+        }
         
         a {
             text-decoration: none;
@@ -458,6 +476,7 @@ video {
                     transform: scale(1.2);
                 }
             }
+
         }
 
         &-image {
@@ -469,6 +488,10 @@ video {
             padding-top: 60%;
             overflow: hidden;
             border-radius: 20px;
+
+            @media all and (max-width: 980px) {
+                padding-top: 90%;
+            }
 
             img {
                 position: absolute;
@@ -492,7 +515,7 @@ video {
 }
 
 .prices-block {
-
+    overflow: hidden;
 
     &__inner {
         padding-top: 70px;
@@ -500,15 +523,21 @@ video {
     }
 
     &__list {
-        display: grid;
-        grid-template-columns: repeat(3, minmax(0, 1fr));
-        gap: 21px 25px;
+
+        .swiper-wrapper {
+            @media all and (min-width: 981px) {
+                display: grid;
+                grid-template-columns: repeat(3, minmax(0, 1fr));
+                gap: 21px 25px;
+            }
+        }
     }
 
     &__item {
         padding: 15px 15px 20px;
         border-radius: 20px;
         box-shadow: 0 4px 12px 0 rgba(0, 0, 0, 0.25);
+        height: auto;
 
         &-image {
             position: relative;
@@ -540,6 +569,10 @@ video {
             text-align: center;
             color: #f2f3ed;
             font-weight: bold;
+            
+            @media all and (max-width: 980px) {
+                font-size: 20px;
+            }
         }
 
         &-prices {
@@ -555,6 +588,10 @@ video {
                 color: #fff;
                 flex-wrap: wrap;
                 letter-spacing: -0.3px;
+                
+                @media all and (max-width: 980px) {
+                    font-size: 16px;
+                }
 
                 &__title {
 
@@ -580,6 +617,13 @@ video {
             }
         }
     }
+
+    &__slider-nav {
+
+        @media all and (max-width: 980px) {
+            margin-top: 20px;
+        }
+    }
 }
 
 .faq-block {
@@ -602,6 +646,10 @@ video {
         font-weight: bold;
         padding: 19px 0;
         border-top: 1px solid #fff;
+
+        @media all and (max-width: 980px) {
+            font-size: 24px;
+        }
     }
 
     &__list {
@@ -617,6 +665,10 @@ video {
             max-width: 1430px;
             margin: 0 auto;
             padding: 18px 20px;
+
+            @media all and (max-width: 980px) {
+                padding: 15px;
+            }
         }
 
         &-title {
@@ -634,6 +686,11 @@ video {
                 color: #fff;
                 text-decoration: none;
 
+                @media all and (max-width: 980px) {
+                    font-size: 18px;
+                    gap: 15px;
+                }
+
                 &.active {
 
                     .icon span+span {
@@ -650,12 +707,23 @@ video {
                 height: 23px;
                 min-width: 23px;
                 position: relative;
+
+                @media all and (max-width: 980px) {
+                    width: 15px;
+                    height: 15px;
+                    min-width: 15px;
+                }
+
                 span {
                     width: 23px;
                     height: 2px;
                     border-radius: 8px;
                     background: #f2f3ed;
                     display: block;
+
+                    @media all and (max-width: 980px) {
+                        width: 15px;
+                    }
 
                     & + span {
                         transform: rotate(90deg);
@@ -678,6 +746,12 @@ video {
             color: #fff;
             transition: all .5s ease;
             padding-left: 47px;
+
+            @media all and (max-width: 980px) {
+                padding-left: 30px;
+                font-size: 16px;
+                line-height: normal;
+            }
 
             &.active {
                 max-height: 999px;
@@ -828,6 +902,10 @@ video {
                     text-decoration: none;
                     transition: all 0.3s ease;
 
+                    @media all and (max-width: 980px) {
+                        font-size: 18px;
+                    }
+
                     &:hover {
                         border-color: var(--primary-color);
                     }
@@ -842,6 +920,10 @@ video {
         flex-wrap: wrap;
         gap: 20px 32px;
         margin-top: 30px;
+
+        @media all and (max-width: 980px) {
+            gap: 10px;
+        }
 
         &-item {
             font-size: 0;
@@ -864,6 +946,10 @@ video {
         text-align: center;
         color: var(--primary-color);
         text-align: center;
+
+        @media all and (max-width: 980px) {
+            font-size: 16px;
+        }
     }
 }
 
@@ -910,14 +996,14 @@ video {
             margin-top: 30px;
 
             li {
-                margin-bottom: 10px;
+                margin-bottom: 15px;
             }
 
             a {
-                font-size: 16px;
+                font-size: 18px;
                 text-decoration: none;
                 font-weight: 500;
-                color: #000;
+                color: var(--accent-color);
             }
         }
     }

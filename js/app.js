@@ -184,6 +184,15 @@ document.addEventListener('DOMContentLoaded', () => {
 
             item.querySelector('.prices-block__item-title').style.color = textColor;
             item.querySelectorAll('.price-item').forEach((el) => el.style.color = textColor);
+            item.querySelectorAll('.price-item__delim').forEach((el) => el.style.borderImage = `
+                repeating-linear-gradient(
+                    to right,
+                    ${textColor} 0,
+                    ${textColor} 1px,
+                    transparent 1px,
+                    transparent 6px
+                ) 1
+            `)
         })
     }
 
@@ -201,4 +210,44 @@ document.addEventListener('DOMContentLoaded', () => {
     appendTags();
 
     window.addEventListener('resize', appendTags);
+
+    let pricesSwiper = null;
+
+    const pricesSlider = () => {
+        const pricesBlockSlider = document.querySelector('.prices-block');
+
+        if (!pricesBlockSlider) return;
+        if (window.innerWidth <= 980) {
+            if (!pricesSwiper) {
+                pricesSwiper = new Swiper('.prices-block .swiper', {
+                    slidesPerView: 1.1,
+                    effect: 'slide',
+                    speed: 1000,
+                    spaceBetween: 20,
+                    lazy: {
+                        loadPrevNext: true,
+                        loadPrevNextAmount: 2
+                    },
+                    autoplay: {
+                        delay: 999999,
+                        disableOnInteraction: false,
+                        pauseOnMouseEnter: true,
+                    },
+                    pagination: {
+                        el: '.prices-block__slider-nav .swiper-pagination',
+                        clickable: true,
+                    }
+                });
+            }
+
+        } else {
+            if (pricesSwiper) {
+                pricesSwiper.destroy(true, true);
+                pricesSwiper = null;
+            }
+        }
+    };
+
+    pricesSlider();
+    window.addEventListener('resize', pricesSlider);
 })
