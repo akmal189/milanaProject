@@ -520,6 +520,10 @@ video {
     &__inner {
         padding-top: 70px;
         padding-bottom: 28px;
+
+        @media all and (max-width: 980px) {
+            padding: 40px 0 20px;
+        }
     }
 
     &__list {
@@ -782,6 +786,10 @@ video {
 
     &__inner {
         padding: 70px 0 40px;
+        
+        @media all and (max-width: 980px) {
+            padding: 40px 0 20px;
+        }
     }
 
     &__top {
