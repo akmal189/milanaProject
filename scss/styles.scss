@@ -92,7 +92,10 @@ video {
 }
 
 .site-wrapper {
-    background: url('../img/kletka_bg.png') top left repeat var(--accent-color);
+    background: url('../img/kletka_bg.png') top left repeat var(--accent-color) fixed;
+    @media all and (max-width: 1260px) {
+        background-attachment: scroll;
+    }
 }
 
 .site-header {
@@ -225,11 +228,21 @@ video {
         border-radius: 20px;
         background: var(--primary-color);
         box-shadow: 0 4px 50px 0 rgba(0, 0, 0, 0.4);
+
+        @media all and (max-width: 980px) {
+            flex-direction: column;
+            padding: 15px 21px;
+        }
     }
 
     &__left {
         width: 386px;
         position: relative;
+
+        @media all and (max-width: 980px) {
+            width: 100%;
+            margin: 0 0 30px;
+        }
     }
 
     &__image {
@@ -260,6 +273,10 @@ video {
             bottom: 0;
             left: 0;
             object-fit: cover;
+
+            @media all and (max-width: 980px) {
+                border-radius: 20px 20px 0 0;
+            }
         }
     }
 
@@ -269,6 +286,12 @@ video {
         left: 0;
         right: 0;
         padding: 15px 23px;
+
+        @media all and (max-width: 980px) {
+            left: 12px;
+            right: 12px;
+            bottom: 10px;
+        }
 
         &-title {
             font-family: var(--font-family);
@@ -292,6 +315,11 @@ video {
     &__right {
         width: calc(100% - 386px);
         padding: 45px 30px 35px;
+
+        @media all and (max-width: 980px) {
+            width: 100%;
+            padding: 0;
+        }
     }
 
     &__title {
@@ -638,7 +666,10 @@ video {
 }
 
 .site-footer {
-    background: url('../img/kletka_bg.png') top left repeat #2e0916;
+    background: url('../img/kletka_bg.png') top left repeat #2e0916 fixed;
+    @media all and (max-width: 1260px) {
+        background-attachment: scroll;
+    }
 
     &__inner {
         padding: 70px 0 40px;
