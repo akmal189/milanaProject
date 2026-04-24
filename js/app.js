@@ -126,6 +126,117 @@ document.addEventListener('DOMContentLoaded', () => {
 	    });
 	});
 
+    // анимации для project.html
+    const projectHero = document.querySelector('.project-hero__image');
+    if (projectHero) {
+        gsap.fromTo(projectHero,
+            { opacity: 0, scale: 0.95 },
+            {
+                opacity: 1,
+                scale: 1,
+                duration: 1,
+                ease: "power2.out"
+            }
+        );
+    }
+
+    const projectGalleryText = document.querySelector('.project-gallery__text-block');
+    if (projectGalleryText) {
+        gsap.fromTo(projectGalleryText,
+            { opacity: 0, y: 40 },
+            {
+                opacity: 1,
+                y: 0,
+                scrollTrigger: {
+                    trigger: projectGalleryText,
+                    start: "top 85%",
+                    toggleActions: "play none none none"
+                },
+                duration: 0.8,
+                ease: "power2.out"
+            }
+        );
+    }
+
+    const galleryItems = document.querySelectorAll('.project-gallery__gallery-item');
+    galleryItems.forEach((item, index) => {
+        gsap.fromTo(item,
+            { opacity: 0, y: 40 },
+            {
+                opacity: 1,
+                y: 0,
+                scrollTrigger: {
+                    trigger: '.project-gallery__gallery',
+                    start: "top 80%",
+                    toggleActions: "play none none none"
+                },
+                duration: 0.8,
+                delay: index * 0.1,
+                ease: "power2.out"
+            }
+        );
+    });
+
+    const projectImagesText = document.querySelector('.project-images__text-block');
+    if (projectImagesText) {
+        gsap.fromTo(projectImagesText,
+            { opacity: 0, y: 40 },
+            {
+                opacity: 1,
+                y: 0,
+                scrollTrigger: {
+                    trigger: projectImagesText,
+                    start: "top 85%",
+                    toggleActions: "play none none none"
+                },
+                duration: 0.8,
+                ease: "power2.out"
+            }
+        );
+    }
+
+    const projectImages = document.querySelectorAll('.project-images__images-item');
+    projectImages.forEach((item, index) => {
+        gsap.fromTo(item,
+            { opacity: 0, y: 40 },
+            {
+                opacity: 1,
+                y: 0,
+                scrollTrigger: {
+                    trigger: '.project-images__images',
+                    start: "top 80%",
+                    toggleActions: "play none none none"
+                },
+                duration: 0.8,
+                delay: index * 0.15,
+                ease: "power2.out"
+            }
+        );
+    });
+
+    // PhotoSwipe галерея
+    if (typeof PhotoSwipeLightbox !== 'undefined') {
+        const lightbox = new PhotoSwipeLightbox({
+            gallery: '.project-gallery__gallery, .project-images__images',
+            children: 'a',
+            pswpModule: PhotoSwipe,
+            bgOpacity: 0.9,
+            padding: { top: 50, bottom: 50, left: 50, right: 50 }
+        });
+
+        lightbox.addFilter('itemData', (itemData, index) => {
+            const img = itemData.element.querySelector('img');
+            if (img) {
+                itemData.src = itemData.element.href;
+                itemData.w = img.naturalWidth || 1920;
+                itemData.h = img.naturalHeight || 1080;
+            }
+            return itemData;
+        });
+
+        lightbox.init();
+    }
+
     document.querySelectorAll('a[href*="#"]').forEach(anchor => {
         anchor.addEventListener('click', function (e) {
             const href = this.getAttribute('href')
